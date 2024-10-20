@@ -1,0 +1,835 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" &nbsp;="">
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="Home.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+    integrity="sha512-YourIntegrityCodeHere" crossorigin="anonymous"></script>
+
+
+  <style type="text/css" id="operaUserStyle"></style>
+</head>
+<style>
+  @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+
+  }
+
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  body {
+
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    overflow-y: scroll;
+  }
+
+  :root {
+    scroll-behavior: smooth;
+  }
+
+
+  /*---------------------- nav - bar--------------------*/
+
+
+  .logo-left img {
+    height: 70px;
+    width: 150px;
+    /* Adjust the height as needed */
+    padding: 2px 15px;
+  }
+
+  .nav-bar {
+    background-color: #000;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 10px 8px;
+    color: white;
+    font-size: large;
+    position: fixed;
+    z-index: 1000;
+    overflow-y: hidden;
+  }
+
+  .nav-bar ul {
+    list-style: none;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .nav-bar li {
+    margin-right: 20px;
+    margin: 0 10px;
+    font-size: larger;
+  }
+
+  .nav-bar a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .navbar ul li a {
+    position: relative;
+  }
+
+  .nav-bar ul li a:after,
+  .nav-bar ul li a:before {
+    transition: all .5s;
+  }
+
+  .nav-bar ul li a:hover {
+    color: #f5bfbf;
+  }
+
+  .nav-bar li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+  }
+
+  .nav-bar ul li a:hover:after {
+    width: 100%;
+  }
+
+  .nav-bar,
+  .cart,
+  .user {
+    padding: 10px;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon-container h1 {
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .icon-container i {
+    margin-left: 20px;
+    color: white;
+    font-size: 1.5em;
+    margin: 0 70px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* -----------Product--------- */
+
+  section {
+    margin: 0 auto;
+    width: 90%;
+    height: 650px;
+    display: flex;
+    justify-content: space-around;
+
+  }
+
+  .product-card {
+    position: relative;
+    max-width: 250px;
+    width: 100%;
+    border-radius: 25px;
+    padding: 10px 30px 30px 30px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    overflow: hidden;
+    justify-content: space-around;
+    border: #000000;
+  }
+
+  .product-card .main-images {
+    position: relative;
+    height: 430px;
+    width: 336px;
+  }
+
+  .product-card .main-images img {
+
+    height: 430px;
+    width: 253px;
+    border-radius: 20px;
+  }
+
+
+  .product-card .main-images .size {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .product-card .main-images .size.active {
+    background: #333;
+    color: #fff;
+  }
+
+  .product-card .cloth-details .cloth_name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #161616;
+  }
+
+  .product-card .cloth-details p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    text-align: justify;
+  }
+
+  .product-card .cloth-details .stars i {
+    margin: 0 -1px;
+    color: #333;
+  }
+
+  .product-card .size-price .size-option {
+    display: flex;
+    align-items: center;
+  }
+
+  .size-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .size-price .size-option .size {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    margin-right: 8px;
+  }
+
+  .size-option .sizes {
+    display: flex;
+  }
+
+  .size-option .sizes .size-button {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 2px solid #0071C7;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #0071C7;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+  }
+
+  .size-option .sizes .size-button.active {
+    background-color: #0071C7;
+    color: #fff;
+  }
+
+  .size-price .price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .size-price .price .price_num {
+    font-size: 22px;
+    font-weight: 600;
+    color: #707070;
+  }
+
+  .size-price .price .price_letter {
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: -4px;
+    color: #707070;
+  }
+
+  .product-card .button {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    border-radius: 25px;
+    margin-top: 30px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .product-card .button .button-layer {
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg, #9708CC, #43CBFF, #9708CC, #43CBFF);
+    transition: all 0.4s ease;
+    border-radius: 25px;
+
+  }
+
+  .product-card .button:hover .button-layer {
+    left: 0;
+
+  }
+
+  .product-card .button button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #fff;
+  }
+
+
+
+  /* --------------footer-------------- */
+  footer {
+    background-color: #000000ff;
+    position: relative;
+    width: 97.9%;
+    /* min-height: 350px; */
+    padding: 20px 18px;
+  }
+
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .col {
+    min-width: 250px;
+    color: #f2f2f2f2;
+    font-family: poppins;
+    padding: 0 2rem;
+  }
+
+  .col .logo {
+    width: 100px;
+    margin-bottom: 25px;
+  }
+
+  .col h3 {
+    color: #ff014fff;
+    margin-bottom: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .col h3::after {
+    content: '';
+    height: 3px;
+    width: 0px;
+    background-color: #ff014fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.3s ease;
+
+  }
+
+  .col h3:hover::after {
+    width: 30px
+  }
+
+  .col .social a i {
+    color: #ff014fff;
+    margin-top: 2rem;
+    margin-right: 5px;
+    transition: 0.3s ease;
+  }
+
+  .col .social a i:hover {
+    transform: scale(1.5);
+    filter: grayscale(25);
+  }
+
+  .col .links a {
+    display: block;
+    text-decoration: none;
+    color: #f2f2f2;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.3s ease;
+  }
+
+  .col .links a::before {
+    content: '';
+    height: 16px;
+    width: 3px;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    background-color: #ff014fff;
+    transition: 0.5s ease;
+    opacity: 0;
+  }
+
+  .col .links a:hover::before {
+    opacity: 1;
+  }
+
+  .col .links a:hover {
+    transform: translateX(-8px);
+    color: #ff014fff;
+  }
+
+  .col .contact-details {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  .col .contact-details i {
+    margin-right: 15px;
+
+  }
+
+  .row .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
+  .row .form input {
+    background-color: #1a1c20ff;
+    border: 0;
+    outline: none;
+    padding: 14px 20px;
+    border-radius: 6px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .form button {
+    padding: 14px 20px;
+    border: 0;
+    border-radius: 6px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #ff014fff;
+  }
+
+  .footerBottom {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .footerBottom p {
+    color: white;
+  }
+
+  /* ---------- */
+  .hero {
+
+    color: #fff;
+    text-align: center;
+    padding: 92px 0 34px;
+  }
+
+  .hero img {
+    width: 100%;
+    height: 500px;
+  }
+
+  .hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+
+
+  .hcontainer {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+  }
+
+  .prod {
+    text-align: center;
+    /* margin-top: 100px; */
+    font-size: 50px;
+    color: #000000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  /* -----------View All */
+  .Vbutton {
+    background-color: #04AA6D;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+
+
+
+
+  .Services {
+
+    color: #fff;
+    text-align: center;
+    padding: 92px 0 34px;
+  }
+
+  .Services img {
+    width: 100%;
+    height: 250px;
+  }
+</style>
+
+<body>
+  <nav class="nav-bar">
+    <div class="logo-left">
+      <img src="Product Image\Antic Logo.png" alt="Left Logo">
+    </div>
+
+    <ul>
+      <li><a href="welcome1.html">Home</a></li>
+      <li><a href="Shop1.html">Shop</a> </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="icon-container">
+      <ul>
+        <li> <a href="login1.html">Login</a> </li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+
+  <div class="hero">
+
+    <a href="Shop1.html"><img src="E:\Html\Product Image\Ethnic-store-welcome.jpg" alt="Slider  "></a>
+  </div>
+  <div class="prod">New Collection's
+
+  </div>
+  <section>
+
+    <div class="product-card">
+
+      <div class="main-images">
+
+
+
+        <img src="E:\Html\Product Image\iw3.png" alt="Images">
+
+
+      </div>
+      <div class="cloth-details">
+        <span class="cloth_name">Green Crepe Pleated Gown</span>
+
+        <div class="stars">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+      </div>
+      <div class="size-price">
+        <div class="size-option">
+          <span class="size">Size:</span>
+          <div class="sizes">
+            <span class="size-button" id="size-s">S</span>
+            <span class="size-button" id="size-m">M</span>
+            <span class="size-button" id="size-l">L</span>
+            <span class="size-button" id="size-xl">XL</span>
+          </div>
+        </div>
+        <div class="price">
+          <span class="price_num">RS.17899</span>
+        </div>
+      </div>
+      <div class="button">
+        <div class="button-layer"></div>
+        <a href="Payment.html"><button fdprocessedid="pedw3">Buy Now</button></a>
+      </div>
+    </div>
+
+
+
+    <div class="product-card">
+
+      <div class="main-images">
+
+
+
+        <img src="E:\Html\Product Image\kj3.png" alt="Images">
+
+
+      </div>
+      <div class="cloth-details">
+        <span class="cloth_name">Brown Kurta with Jacket Set</span>
+      
+        <div class="stars">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+      </div>
+      <div class="size-price">
+        <div class="size-option">
+          <span class="size">Size:</span>
+          <div class="sizes">
+            <span class="size-button" id="size-s">S</span>
+            <span class="size-button" id="size-m">M</span>
+            <span class="size-button" id="size-l">L</span>
+            <span class="size-button" id="size-xl">XL</span>
+          </div>
+        </div>
+        <div class="price">
+          <span class="price_num">RS.23899</span>
+        </div>
+      </div>
+      <div class="button">
+        <div class="button-layer"></div>
+        <a href="Payment.html"><button fdprocessedid="bqwj57">Buy Now</button></a>
+      </div>
+    </div>
+
+
+    <div class="product-card">
+
+      <div class="main-images">
+
+
+
+        <img src="E:\Html\Product Image\L2.png" alt="Images">
+
+
+      </div>
+      <div class="cloth-details">
+        <span class="cloth_name">Green Printed Lehenga set</span>
+      
+        <div class="stars">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+      </div>
+      <div class="size-price">
+        <div class="size-option">
+          <span class="size">Size:</span>
+          <div class="sizes">
+            <span class="size-button" id="size-s">S</span>
+            <span class="size-button" id="size-m">M</span>
+            <span class="size-button" id="size-l">L</span>
+            <span class="size-button" id="size-xl">XL</span>
+          </div>
+        </div>
+        <div class="price">
+          <span class="price_num">RS.10999</span>
+        </div>
+      </div>
+      <div class="button">
+        <div class="button-layer"></div>
+        <a href="Payment.html"><button fdprocessedid="avl8g4">Buy Now</button></a>
+      </div>
+    </div>
+
+    <div class="product-card">
+
+      <div class="main-images">
+
+
+
+        <img src="E:\Html\Product Image\iwm4.png" alt="Images">
+
+
+      </div>
+      <div class="cloth-details">
+        <span class="cloth_name">Black Hand Embroidered Velvet Indowestern</span>
+
+        <div class="stars">
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bxs-star"></i>
+          <i class="bx bx-star"></i>
+        </div>
+      </div>
+      <div class="size-price">
+        <div class="size-option">
+          <span class="size">Size:</span>
+          <div class="sizes">
+            <span class="size-button" id="size-s">S</span>
+            <span class="size-button" id="size-m">M</span>
+            <span class="size-button" id="size-l">L</span>
+            <span class="size-button" id="size-xl">XL</span>
+          </div>
+        </div>
+        <div class="price">
+          <span class="price_num">RS.44439</span>
+        </div>
+      </div>
+      <div class="button">
+        <div class="button-layer"></div>
+        <a href="Payment.html"><button fdprocessedid="0rjsd">Buy Now</button></a>
+      </div>
+    </div>
+
+
+
+  </section>
+  <div class="Services">
+    <img src="Product Image\Services.png" alt="Services">
+  </div>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col" id="company">
+          <img src="Product Image\Antic Logo.png" alt="" class="logo">
+          <p>
+            We are specialized in designings, make your business a brand.
+            Try our premium services.
+          </p>
+          <div class="social">
+            <a><i class="fab fa-facebook"></i></a>
+            <a><i class="fab fa-instagram"></i></a>
+            <a><i class="fab fa-youtube"></i></a>
+            <a><i class="fab fa-twitter"></i></a>
+            <a><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+
+
+        <div class="col" id="services">
+          <h3>Services</h3>
+          <div class="links">
+            <a>Free Shipping</a>
+            <a>Coustomer Service</a>
+            <a>Secure Payment</a>
+            <a>Contact Us</a>
+          </div>
+        </div>
+
+        <div class="col" id="useful-links">
+          <h3>Links</h3>
+          <div class="links">
+            <a>About</a>
+            <a>Services</a>
+            <a>Our Policy</a>
+            <a>Help</a>
+          </div>
+        </div>
+
+        <div class="col" id="contact">
+          <h3>Contact</h3>
+          <div class="contact-details">
+            <i class="fa fa-location"></i>
+            <p>Gondal,Rajkot,Gujarat,India</p>
+          </div>
+          <div class="contact-details">
+            <i class="fa fa-phone"></i>
+            <p>+91-1234567890</p>
+          </div>
+          <div class="contact-details">
+            <i class="fa-solid fa-envelope"></i>
+            <p><label for="email">antic.collection@gmail.com</label>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form">
+          <form action="">
+            <input type="text" placeholder="Email here...">
+            <button><i class="fa fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="footerBottom">
+      <p>Copyright &copy;2024; Designed by <span class="designer">Aarav Patel</span></p>
+    </div>
+
+  </footer>
+</body>
+
+</html>

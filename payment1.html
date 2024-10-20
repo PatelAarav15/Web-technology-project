@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+		integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer">
+
+	<title>Buy Now</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+
+		body {
+			background-image: url("\sectionbg.png");
+			background-color: #e4e2e2;
+			background-size: cover;
+			background-repeat: no-repeat;
+		}
+
+		nav {
+			background-color: #000000;
+			padding: 10px 20px;
+			width: 100%;
+		}
+
+		.logo img {
+			height: 70px;
+			width: 150px;
+		}
+
+		header {
+			width: 80%;
+			height: 100%;
+			font-size: 1.2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 50px 50px;
+			transform: translate(15%);
+		}
+
+		.container {
+			background: white;
+			max-width: 800px;
+			min-height: 500px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			padding: 20px 20px;
+			border-radius: 10px;
+		}
+
+		.left {
+			flex-basis: 50%;
+		}
+
+		.right {
+			flex-basis: 50%;
+		}
+
+		form {
+			padding: 1rem;
+		}
+
+		h3 {
+			margin-top: 1rem;
+			color: #2c3e50;
+		}
+
+		form input[type="text"],
+		form input[type="number"] {
+			width: 100%;
+			padding: 0.5rem 0.7rem;
+			margin: 0.5rem 0;
+			outline: none;
+		}
+
+		form .error {
+			color: red;
+			margin: 0.2rem 0;
+			font-size: 0.9rem;
+		}
+
+		#zip {
+			display: flex;
+			margin-top: 0.5rem;
+		}
+
+		#zip select {
+			padding: 0.5rem 0.7rem;
+		}
+
+		input[type="submit"] {
+			width: 100%;
+			padding: 0.7rem 1.5rem;
+			background: #34495e;
+			color: white;
+			border: none;
+			outline: none;
+			margin-top: 1rem;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background: #2c3e50;
+		}
+	</style>
+</head>
+
+<body>
+	<nav>
+		<div class="logo">
+			<center> <a href="welcome1.html"> <img src="Product Image/Antic Logo.png" alt="Left Logo"></a></center>
+		</div>
+	</nav>
+
+	<header>
+		<div class="container">
+			<div class="left">
+				<h3>BILLING ADDRESS</h3>
+				<form id="billingForm">
+					<label>Full name</label>
+					<input type="text" id="fullname" name="fullname" placeholder="Enter name">
+					<p class="error" id="errorName"></p>
+
+					<label>Email</label>
+					<input type="text" id="email" name="email" placeholder="Enter email">
+					<p class="error" id="errorEmail"></p>
+
+					<label>Address</label>
+					<input type="text" id="address" name="address" placeholder="Enter address">
+					<p class="error" id="errorAddress"></p>
+
+					<label>City</label>
+					<input type="text" id="city" name="city" placeholder="Enter City">
+					<p class="error" id="errorCity"></p>
+
+					<label>State</label>
+					<input type="text" id="state" name="state" placeholder="Enter State">
+					<p class="error" id="errorState"></p>
+
+					<label>Pin-Code</label>
+					<input type="text" id="pincode" name="pincode" placeholder="Enter Pin-Code">
+					<p class="error" id="errorPincode"></p>
+				</form>
+			</div>
+
+			<div class="right">
+				<h3>PAYMENT</h3>
+				<form id="paymentForm">
+					<p>Accepted Card & UPI</p>
+					<img src="Product Image/card2.png" width="60">
+					<img src="Product Image/UPI.jpg" width="60">
+
+					<label>Credit card number</label>
+					<input type="text" id="ccno" name="ccno" placeholder="Enter card number">
+					<p class="error" id="errorCCNo"></p>
+
+					<label>Exp month</label>
+					<input type="text" id="expmonth" name="expmonth" placeholder="Enter Month">
+					<p class="error" id="errorExpMonth"></p>
+
+					<div id="zip">
+						<label>
+							Exp year
+							<select id="expyear">
+								<option>Choose Year..</option>
+								<option>2022</option>
+								<option>2023</option>
+								<option>2024</option>
+								<option>2025</option>
+								<option>2026</option>
+								<option>2027</option>
+								<option>2028</option>
+								<option>2029</option>
+								<option>2030</option>
+							</select>
+						</label>
+						<label>
+							CVV
+							<input type="number" id="cvv" name="cvv" placeholder="CVV">
+							<p class="error" id="errorCVV"></p>
+						</label>
+					</div>
+
+					<input type="submit" value="Proceed to Pay" onclick="return validateForms()">
+				</form>
+			</div>
+		</div>
+	</header>
+
+	<script>
+		// Validation for Billing Address and Payment
+		function validateForms() {
+			let isValid = true;
+
+			// Clear previous errors
+			document.querySelectorAll(".error").forEach(e => e.innerHTML = '');
+
+			// Validate Billing Form
+			const fullname = document.getElementById("fullname").value;
+			const email = document.getElementById("email").value;
+			const address = document.getElementById("address").value;
+			const city = document.getElementById("city").value;
+			const state = document.getElementById("state").value;
+			const pincode = document.getElementById("pincode").value;
+
+			if (fullname === '') {
+				document.getElementById("errorName").innerHTML = "Full name is required.";
+				isValid = false;
+			}
+			if (email === '') {
+				document.getElementById("errorEmail").innerHTML = "Email is required.";
+				isValid = false;
+			}
+			if (address === '') {
+				document.getElementById("errorAddress").innerHTML = "Address is required.";
+				isValid = false;
+			}
+			if (city === '') {
+				document.getElementById("errorCity").innerHTML = "City is required.";
+				isValid = false;
+			}
+			if (state === '') {
+				document.getElementById("errorState").innerHTML = "State is required.";
+				isValid = false;
+			}
+			if (pincode === '') {
+				document.getElementById("errorPincode").innerHTML = "Pin-Code is required.";
+				isValid = false;
+			}
+
+			// Validate Payment Form
+			const ccno = document.getElementById("ccno").value;
+			const expmonth = document.getElementById("expmonth").value;
+			const expyear = document.getElementById("expyear").value;
+			const cvv = document.getElementById("cvv").value;
+
+			if (ccno === '') {
+				document.getElementById("errorCCNo").innerHTML = "Credit card number is required.";
+				isValid = false;
+			}
+			if (expmonth === '') {
+				document.getElementById("errorExpMonth").innerHTML = "Expiry month is required.";
+				isValid = false;
+			}
+			if (expyear === 'Choose Year..') {
+				document.getElementById("errorExpYear").innerHTML = "Expiry year is required.";
+				isValid = false;
+			}
+			if (cvv === '') {
+				document.getElementById("errorCVV").innerHTML = "CVV is required.";
+				isValid = false;
+			}
+
+			// If form is valid, redirect to shop1.html
+			if (isValid) {
+				window.location.href = 'shop1.html';
+			}
+			return false; // prevent form submission if validation fails
+		}
+	</script>
+</body>
+
+</html>
